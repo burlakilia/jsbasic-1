@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Event</title>
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+              'use strict';
+
+              const list = document.querySelector('.list');
+
+              document.body.onclick = function (event) {
+                event.preventDefault();
+                console.log(event.___test);
+
+                if (event.target.tagName === 'LI') {
+                  event.target.style.color = 'red';
+                } else {
+                  event.target.style.color = 'green';
+                }
+              };
+
+              list.addEventListener('click', function (event) {
+                event.___test = true;
+                console.log('1')
+              });
+
+              list.addEventListener('click', function (event) {
+                console.log('2', event);
+              });
+            });
+        </script>
+    </head>
+    <body>
+        <h1 class="header">Виды элементов формы</h1>
+        <ul class="list">
+            <li>Кнопку</li>
+            <li>Инпут</li>
+            <li>Чекбокс</li>
+            <li>Кнопку</li>
+            <li>Инпут</li>
+        </ul>
+        <a href="http://google.com">Google</a>
+    </body>
+</html>

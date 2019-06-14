@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .header {
+            color: green;
+        }
+
+        .header-inactive {
+            color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="header" jsbasic="test">Виды элементов формы</h1>
+    <ul class="list">
+        <li>Кнопку</li>
+        <li>Инпут</li>
+        <li>Чекбокс</li>
+    </ul>
+
+    <form>
+        <input class="checkbox" type="checkbox"/>
+    </form>
+
+    <script>
+      (function () {
+        'use strict';
+
+        const header = document.querySelector('.header');
+        const checkbox = document.querySelector('.checkbox');
+
+        header.style.color = 'blue';
+        checkbox.checked = true;
+
+        console.log(checkbox.checked );
+
+        console.log(checkbox.getAttribute('checked'));
+
+      })();
+
+    </script>
+
+
+</body>
+</html>
