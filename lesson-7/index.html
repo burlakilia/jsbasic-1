@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сетевой запрос</title>
+</head>
+<body>
+    <script>
+        (function () {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener('readystatechange', () => {
+            console.log(xhr.readyState);
+
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+              const data = JSON.parse(xhr.responseText);
+
+              console.log(data);
+            }
+          });
+
+          xhr.open('GET', './data.json');
+          xhr.send();
+
+        })();
+    </script>
+
+</body>
+</html>
