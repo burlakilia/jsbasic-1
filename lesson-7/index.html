@@ -7,21 +7,28 @@
 <body>
     <script>
         (function () {
-          const xhr = new XMLHttpRequest();
 
-          xhr.addEventListener('readystatechange', () => {
-            console.log(xhr.readyState);
+          function request(method, path, done) {
+            const xhr = new XMLHttpRequest();
 
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-              const data = JSON.parse(xhr.responseText);
+            xhr.addEventListener('readystatechange', () => {
+              console.log(xhr.readyState);
 
-              console.log(data);
-            }
+              if (xhr.readyState === XMLHttpRequest.DONE) {
+                console.log('!!!', xhr.status);
+                done(JSON.parse(xhr.responseText));
+              }
+            });
+
+
+            xhr.open(method, path);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({ hello: 'world' }));
+          }
+
+          request('POST', 'https://intensive-mail-server.herokuapp.com/goods', function (data) {
+            console.log('2', data);
           });
-
-          xhr.open('GET', './data.json');
-          xhr.send();
-
         })();
     </script>
 
