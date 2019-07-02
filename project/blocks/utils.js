@@ -1,4 +1,4 @@
-function request(method, path) {
+export function request(method, path) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
 

@@ -1,8 +1,10 @@
+import { request } from '../utils';
+
 // 1) Создание - понять кто рут
 // 2) Получить данные
 // 3) Отрисовать
 
-class Goods {
+export class Goods {
 
   constructor({ el }) {
     this.el = el;
