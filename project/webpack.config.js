@@ -1,8 +1,10 @@
 module.exports = {
-  entry: './blocks/app.js',
+  entry: './app.js',
   output: {
     filename: 'bundle.js'
   },
+  watch: true,
+  devtool: 'eval-source-map',
   module: {
     rules: [{
       test: /\.js$/,
